@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project implements a machine learning solution to predict whether items listed on MercadoLibre's marketplace are new or used. The solution achieves an accuracy of **86.6%** and an F1-score of **86.6%**, meeting the minimum requirement of 86% accuracy.
+This project implements a machine learning solution to predict whether items listed on MercadoLibre's marketplace are new or used. The solution achieves an accuracy of **87.36%** and an F1-score of **87.36%**, meeting the minimum requirement of 86% accuracy.
 
 ## Problem Statement
 
