@@ -485,7 +485,7 @@ def main():
     print(f"📊 Sample Performance: Accuracy={accuracy:.4f}, F1={f1_score_result:.4f}")
     print(f"🏆 Champion Performance: Accuracy={champion_accuracy:.4f}, F1={champion_f1:.4f}")
     print(f"💾 Model saved as: {model_filename}")
-    print(f"📊 Visualizations saved as: champion_model_performance_{best_model_name.lower().replace(' ', '_')}.png")
+    print(f"📊 Visualizations saved as: model_results/champion_model_performance_{best_model_name.lower().replace(' ', '_')}.png")
     
     return loaded_champion_model, champion_accuracy, champion_f1
 

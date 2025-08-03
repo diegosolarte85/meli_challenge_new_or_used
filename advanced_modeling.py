@@ -382,8 +382,8 @@ class AdvancedModeling:
             axes[i, 1].grid(True, alpha=0.3)
         
         plt.tight_layout()
-        plt.savefig('deep_learning_training_history.png', dpi=300, bbox_inches='tight')
-        print("📊 Training history plots saved as: deep_learning_training_history.png")
+        plt.savefig('model_results/deep_learning_training_history.png', dpi=300, bbox_inches='tight')
+        print("📊 Training history plots saved as: model_results/deep_learning_training_history.png")
         plt.show()
 
     def compare_all_models(self, best_xgb_model, best_xgb_score, dl_models, best_dl_name, best_dl_score):

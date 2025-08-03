@@ -91,7 +91,7 @@ After running the script, you'll get:
 - `label_encoder.pkl` - Label encoder
 
 ### Visualization Files
-- `deep_learning_training_history.png` - Training plots
+- `model_results/deep_learning_training_history.png` - Training plots
 
 ## Progress Tracking
 

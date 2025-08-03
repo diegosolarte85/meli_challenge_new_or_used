@@ -545,8 +545,8 @@ def plot_roc_curve_and_confusion_matrix(model, X_test, y_test, y_test_encoded, m
              bbox=dict(boxstyle="round,pad=0.3", facecolor="lightgray", alpha=0.8))
     
     plt.tight_layout()
-    plt.savefig(f'champion_model_performance_{model_name.lower().replace(" ", "_")}.png', dpi=300, bbox_inches='tight')
-    print(f"📊 Visualizations saved as: champion_model_performance_{model_name.lower().replace(' ', '_')}.png")
+    plt.savefig(f'model_results/champion_model_performance_{model_name.lower().replace(" ", "_")}.png', dpi=300, bbox_inches='tight')
+    print(f"📊 Visualizations saved as: model_results/champion_model_performance_{model_name.lower().replace(' ', '_')}.png")
     plt.show()
     
     return accuracy, f1

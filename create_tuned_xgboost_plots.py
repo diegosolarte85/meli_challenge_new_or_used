@@ -123,7 +123,7 @@ def prepare_data():
         traceback.print_exc()
         return None, None, None, None
 
-def create_roc_curve(model, X_test, y_test, save_path='tuned_xgboost_roc_curve.png'):
+def create_roc_curve(model, X_test, y_test, save_path='model_results/tuned_xgboost_roc_curve.png'):
     """
     Create and save ROC curve plot for the tuned XGBoost model
     """
@@ -162,7 +162,7 @@ def create_roc_curve(model, X_test, y_test, save_path='tuned_xgboost_roc_curve.p
     
     return roc_auc
 
-def create_confusion_matrix(model, X_test, y_test, save_path='tuned_xgboost_confusion_matrix.png'):
+def create_confusion_matrix(model, X_test, y_test, save_path='model_results/tuned_xgboost_confusion_matrix.png'):
     """
     Create and save confusion matrix plot for the tuned XGBoost model
     """
@@ -274,8 +274,8 @@ def main():
     # Summary
     print(f"\n✅ Plot Creation Complete!")
     print("="*30)
-    print(f"   ROC Curve: tuned_xgboost_roc_curve.png")
-    print(f"   Confusion Matrix: tuned_xgboost_confusion_matrix.png")
+    print(f"   ROC Curve: model_results/tuned_xgboost_roc_curve.png")
+    print(f"   Confusion Matrix: model_results/tuned_xgboost_confusion_matrix.png")
     print(f"   Model Performance:")
     print(f"     - Accuracy:  {accuracy:.4f}")
     print(f"     - F1-Score:  {f1:.4f}")
