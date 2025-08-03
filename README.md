@@ -78,6 +78,13 @@ In the context of MercadoLibre's Marketplace, an algorithm is needed to predict 
 
 ### Champion Model Performance (XGBoost - Tuned)
 
+<table>
+<tr>
+<td><img src="model_results/tuned_xgboost_roc_curve.png" alt="Tuned XGBoost ROC Curve" width="400"/></td>
+<td><img src="model_results/tuned_xgboost_confusion_matrix.png" alt="Tuned XGBoost Confusion Matrix" width="400"/></td>
+</tr>
+</table>
+
 #### Best Hyperparameters
 ```python
 {
@@ -191,7 +198,8 @@ The top 20 most important features (based on XGBoost feature importance):
 - **Sample Performance**: Accuracy=87.35%, F1=87.35%
 - **Champion Performance**: Accuracy=87.36%, F1=87.36%
 - **Model File**: `champion_model_xgboost.pkl`
-- **Visualizations**: `champion_model_performance_xgboost.png`
+- **Visualizations**: `model_results/champion_model_performance_xgboost.png`
+- **Tuned XGBoost Results**: `model_results/tuned_xgboost_confusion_matrix.png`, `model_results/tuned_xgboost_roc_curve.png`
 
 #### 📊 Performance Metrics
 - **Accuracy**: 87.36% (exceeds 86% requirement)
@@ -234,7 +242,7 @@ The top 20 most important features (based on XGBoost feature importance):
 The pipeline generates comprehensive visualizations for the champion model:
 
 ### Generated Files
-- `champion_model_performance_xgboost.png`: Combined visualization containing:
+- `model_results/champion_model_performance_xgboost.png`: Combined visualization containing:
   - **ROC Curve**: Shows model's ability to distinguish between classes
   - **Confusion Matrix**: Visual representation of predictions vs actual values
   - **Performance Metrics**: Accuracy, precision, recall, F1-score
@@ -277,7 +285,7 @@ The script will:
 
 ### Generated Files
 - `champion_model_xgboost.pkl`: Saved champion model (XGBoost)
-- `champion_model_performance_xgboost.png`: Performance visualizations (ROC curve + confusion matrix)
+- `model_results/champion_model_performance_xgboost.png`: Performance visualizations (ROC curve + confusion matrix)
 
 ## Future Improvements
 
