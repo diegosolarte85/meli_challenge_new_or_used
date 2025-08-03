@@ -183,3 +183,8 @@ cython_debug/
 # Large dataset files
 MLA_100k.jsonlines
 *.jsonlines
+
+# Model files (large binary files)
+*.h5
+*.joblib
+*.pickle
