@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project implements a machine learning solution to predict whether items listed on MercadoLibre's marketplace are new or used. The solution achieves an accuracy of **90.68%** and an F1-score of **90.68%** with hyperparameter tuning, significantly exceeding the minimum requirement of 86% accuracy.
+This project implements a machine learning solution to predict whether items listed on MercadoLibre's marketplace are new or used. The solution achieves an accuracy of **90.80%** and an F1-score of **90.51%** with hyperparameter tuning, significantly exceeding the minimum requirement of 86% accuracy.
 
 ## Problem Statement
 
@@ -37,23 +37,23 @@ In the context of MercadoLibre's Marketplace, an algorithm is needed to predict 
 
 ### Model
 
-- **Base Algorithm**: XGBoost Classifier (87.36% accuracy)
-- **Optimized Algorithm**: XGBoost with Hyperparameter Tuning (90.68% accuracy)
+- **Base Algorithm**: XGBoost Classifier (87.42% accuracy)
+- **Optimized Algorithm**: XGBoost with Hyperparameter Tuning (90.80% accuracy)
 - **Improvement**: +3.32% accuracy through systematic parameter optimization
 - **Pipeline**: Combines preprocessing and classification in a single pipeline
 
 ## Performance Results
 
 ### Primary Metric: Accuracy
-- **Achieved**: 90.68% (with hyperparameter tuning)
-- **Base Model**: 87.36%
+- **Achieved**: 90.80% (with hyperparameter tuning)
+- **Base Model**: 87.42%
 - **Requirement**: ≥86%
 - **Status**: ✅ **REQUIREMENT EXCEEDED**
 
 ### Secondary Metric: F1-Score (Weighted)
-- **Achieved**: 90.68% (with hyperparameter tuning)
-- **Base Model**: 87.36%
-- **Improvement**: +3.32% through hyperparameter optimization
+- **Achieved**: 90.51% (with hyperparameter tuning)
+- **Base Model**: 87.28%
+- **Improvement**: +3.23% through hyperparameter optimization
 - **Rationale**: F1-score is chosen as the secondary metric because:
   1. **Balanced Performance**: It provides a harmonic mean of precision and recall, ensuring the model performs well on both classes
   2. **Class Imbalance Handling**: With weighted averaging, it accounts for the slight class imbalance in the dataset
@@ -64,13 +64,13 @@ In the context of MercadoLibre's Marketplace, an algorithm is needed to predict 
 
 | Model | Accuracy | F1-Score | Overfitting Status |
 |-------|----------|----------|-------------------|
-| **XGBoost (Tuned)** | **90.68%** | **90.68%** | ✅ No overfitting |
-| **XGBoost (Base)** | **87.35%** | **87.35%** | ✅ No overfitting |
-| CatBoost | 87.17% | 87.17% | ✅ No overfitting |
+| **XGBoost (Tuned)** | **90.80%** | **90.51%** | ✅ No overfitting |
+| **XGBoost (Base)** | **87.42%** | **87.28%** | ✅ No overfitting |
+| CatBoost | 87.23% | 87.11% | ✅ No overfitting |
 | Neural Network | 86.63% | 86.65% | ✅ No overfitting |
 | Random Forest | 85.42% | 85.40% | ✅ No overfitting |
 | Logistic Regression | 84.94% | 84.87% | ✅ No overfitting |
-| Decision Tree | 84.40% | 84.40% | ✅ No overfitting |
+| Decision Tree | 84.47% | 84.33% | ✅ No overfitting |
 | **BiLSTM (Deep Learning)** | **81.85%** | **81.87%** | ✅ No overfitting |
 | **CNN+LSTM (Deep Learning)** | **80.56%** | **80.57%** | ✅ No overfitting |
 | K-Nearest Neighbors | 76.97% | 77.00% | ✅ No overfitting |
@@ -118,15 +118,15 @@ weighted avg       0.91      0.91      0.91     10000
 
 #### Overfitting Assessment
 - **Training Accuracy**: 90.85%
-- **Test Accuracy**: 90.68%
-- **Accuracy Gap**: 0.17% (≤ 2% threshold)
+- **Test Accuracy**: 90.80%
+- **Accuracy Gap**: 0.05% (≤ 2% threshold)
 - **Cross-validation F1**: 90.32% (± 0.45%)
 - **Status**: ✅ **No significant overfitting detected**
 
 #### Performance Improvement
-- **Base Model Accuracy**: 87.36%
-- **Tuned Model Accuracy**: 90.68%
-- **Improvement**: +3.32% accuracy improvement
+- **Base Model Accuracy**: 87.42%
+- **Tuned Model Accuracy**: 90.80%
+- **Improvement**: +3.38% accuracy improvement
 - **Cross-validation Improvement**: +3.06% CV score improvement
 
 ### Detailed Model Comparison Results
@@ -134,20 +134,20 @@ weighted avg       0.91      0.91      0.91     10000
 #### Initial Training (30% of data)
 | Model | Accuracy | F1-Score | Overfitting Status |
 |-------|----------|----------|-------------------|
-| **XGBoost** | **87.35%** | **87.35%** | ✅ No overfitting (gap: 0.98%) |
-| CatBoost | 87.17% | 87.17% | ✅ No overfitting (gap: 0.14%) |
+| **XGBoost** | **87.42%** | **87.28%** | ✅ No overfitting (gap: 0.98%) |
+| CatBoost | 87.23% | 87.11% | ✅ No overfitting (gap: 0.14%) |
 | Neural Network | 86.63% | 86.65% | ✅ No overfitting (gap: 0.04%) |
 | Random Forest | 85.42% | 85.40% | ✅ No overfitting (gap: -0.36%) |
 | Logistic Regression | 84.94% | 84.87% | ✅ No overfitting (gap: -0.19%) |
-| Decision Tree | 84.40% | 84.40% | ✅ No overfitting (gap: -0.50%) |
+| Decision Tree | 84.47% | 84.33% | ✅ No overfitting (gap: -0.50%) |
 | K-Nearest Neighbors | 76.97% | 77.00% | ✅ No overfitting (gap: -0.89%) |
 
 #### Champion Model (Full dataset)
 - **Model**: XGBoost
 - **Training Samples**: 90,000
 - **Test Samples**: 10,000
-- **Final Accuracy**: 87.36%
-- **Final F1-Score**: 87.36%
+- **Final Accuracy**: 87.42%
+- **Final F1-Score**: 87.28%
 - **Cross-validation F1**: 87.26% (± 0.38%)
 - **Overfitting Gap**: 0.37% (well below 2% threshold)
 
@@ -195,15 +195,15 @@ The top 20 most important features (based on XGBoost feature importance):
 ### Final Results Summary
 
 #### 🏆 Champion Model: XGBoost
-- **Sample Performance**: Accuracy=87.35%, F1=87.35%
-- **Champion Performance**: Accuracy=87.36%, F1=87.36%
+- **Sample Performance**: Accuracy=87.42%, F1=87.28%
+- **Champion Performance**: Accuracy=87.42%, F1=87.28%
 - **Model File**: `champion_model_xgboost.pkl`
 - **Visualizations**: `model_results/champion_model_performance_xgboost.png`
 - **Tuned XGBoost Results**: `model_results/tuned_xgboost_confusion_matrix.png`, `model_results/tuned_xgboost_roc_curve.png`
 
 #### 📊 Performance Metrics
-- **Accuracy**: 87.36% (exceeds 86% requirement)
-- **F1-Score**: 87.36% (weighted average)
+- **Accuracy**: 87.42% (exceeds 86% requirement)
+- **F1-Score**: 87.28% (weighted average)
 - **Precision (New)**: 88%
 - **Recall (New)**: 88%
 - **Precision (Used)**: 86%
@@ -337,8 +337,8 @@ python advanced_modeling.py --tuning-level full
 
 **Best Tuned XGBoost Model:**
 - **CV Score**: 90.32%
-- **Test Accuracy**: 90.68%
-- **Test F1-Score**: 90.68%
+- **Test Accuracy**: 90.80%
+- **Test F1-Score**: 90.51%
 - **Best Parameters**:
   ```python
   {
@@ -353,9 +353,9 @@ python advanced_modeling.py --tuning-level full
   ```
 
 **Performance Comparison:**
-- **Tuned XGBoost**: 90.68% accuracy, 90.68% F1-score
-- **Base XGBoost**: 87.36% accuracy, 87.36% F1-score
-- **Improvement**: +3.32% accuracy improvement through hyperparameter tuning
+- **Tuned XGBoost**: 90.80% accuracy, 90.51% F1-score
+- **Base XGBoost**: 87.42% accuracy, 87.28% F1-score
+- **Improvement**: +3.38% accuracy improvement through hyperparameter tuning
 
 #### Deep Learning Neural Network Results
 
@@ -385,10 +385,10 @@ python advanced_modeling.py --tuning-level full
 
 | Metric | XGBoost (Tuned) | Deep Learning (BiLSTM) | Winner |
 |--------|------------------|------------------------|--------|
-| **Accuracy** | **90.68%** | 81.85% | **XGBoost** |
-| **F1-Score** | **90.68%** | 81.87% | **XGBoost** |
-| **Precision** | **90.68%** | 81.91% | **XGBoost** |
-| **Recall** | **90.68%** | 81.85% | **XGBoost** |
+| **Accuracy** | **90.80%** | 81.85% | **XGBoost** |
+| **F1-Score** | **90.51%** | 81.87% | **XGBoost** |
+| **Precision** | **90.80%** | 81.91% | **XGBoost** |
+| **Recall** | **90.80%** | 81.85% | **XGBoost** |
 
 **Overall Winner: XGBoost (Tuned)**
 - **XGBoost wins**: 4 metrics
@@ -414,7 +414,7 @@ python advanced_modeling.py --tuning-level full
 #### Recommendation
 
 **XGBoost is recommended for this dataset** because:
-1. **Better Performance**: 90.68% vs 81.87% F1-score
+1. **Better Performance**: 90.51% vs 81.87% F1-score
 2. **More Consistent Results**: All metrics show superior performance
 3. **Faster Inference**: Real-time prediction capabilities
 4. **Higher Interpretability**: Feature importance analysis available
@@ -596,8 +596,8 @@ python advanced_modeling.py --tuning-level comprehensive
 
 | Model | Expected Accuracy | Expected F1-Score | Training Time |
 |-------|------------------|-------------------|---------------|
-| **Original XGBoost** | 87.35% | 87.35% | ~2 minutes |
-| **Tuned XGBoost** | 87.5-90.7% | 87.5-90.7% | ~10-30 minutes |
+| **Original XGBoost** | 87.42% | 87.28% | ~2 minutes |
+| **Tuned XGBoost** | 87.5-90.8% | 87.5-90.5% | ~10-30 minutes |
 | **LSTM** | 54-85% | 38-85% | ~15-30 minutes |
 | **BiLSTM** | 82-88% | 82-88% | ~20-40 minutes |
 | **CNN+LSTM** | 81-89% | 81-89% | ~25-50 minutes |
@@ -747,16 +747,16 @@ The implementations maintain the original solution's strengths while exploring a
 ## Conclusion
 
 The implemented solution successfully meets all requirements:
-- ✅ Achieves accuracy ≥86% (90.68%)
+- ✅ Achieves accuracy ≥86% (90.80%)
 - ✅ Includes comprehensive feature engineering and model comparison
-- ✅ Provides detailed evaluation with secondary metric (F1-score: 87.36%)
+- ✅ Provides detailed evaluation with secondary metric (F1-score: 87.28%)
 - ✅ Demonstrates feature importance analysis with XGBoost
 - ✅ Uses appropriate preprocessing and modeling techniques
 - ✅ Includes comprehensive overfitting assessment
 - ✅ Generates performance visualizations
 
 ### Key Achievements
-- **Best Model**: XGBoost achieved 87.36% accuracy and F1-score
+- **Best Model**: XGBoost achieved 87.42% accuracy and 87.28% F1-score
 - **No Overfitting**: All models show minimal train-test performance gaps
 - **Comprehensive Evaluation**: 7 different algorithms compared with standardized iterations
 - **Strong Generalization**: Cross-validation confirms good model performance
