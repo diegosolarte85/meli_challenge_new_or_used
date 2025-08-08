@@ -1,0 +1,56 @@
+Champion Model Feature Importance Analysis
+==================================================
+Generated: 2025-08-08 10:45:32.379171
+
+FEATURE CATEGORIES:
+------------------------------
+Text (TF-IDF): 1000 features (46.1%)
+  Top: text__vinilo (0.015995)
+
+Categorical (One-Hot): 10506 features (29.3%)
+  Top: cat__listing_type_id_free (0.060420)
+
+Numerical (Scaled): 37 features (24.6%)
+  Top: num__initial_quantity (0.105853)
+
+Price Features: 4 features (1.2%)
+  Top: num__base_price (0.007171)
+
+Quantity Features: 3 features (13.7%)
+  Top: num__initial_quantity (0.105853)
+
+Boolean Features: 15 features (5.0%)
+  Top: num__has_nuevo (0.011299)
+
+TOP 30 FEATURES:
+--------------------------------------------------
+ 1. num__initial_quantity                                          0.105853 (10.59%)
+ 2. cat__listing_type_id_free                                      0.060420 ( 6.04%)
+ 3. cat__buying_mode_classified                                    0.040546 ( 4.05%)
+ 4. num__available_quantity                                        0.016829 ( 1.68%)
+ 5. text__vinilo                                                   0.015995 ( 1.60%)
+ 6. num__automatic_relist                                          0.015235 ( 1.52%)
+ 7. num__sold_quantity                                             0.014777 ( 1.48%)
+ 8. num__free_shipping                                             0.011505 ( 1.15%)
+ 9. num__has_nuevo                                                 0.011299 ( 1.13%)
+10. num__has_antiguo                                               0.011061 ( 1.11%)
+11. num__has_dragged_bids                                          0.010422 ( 1.04%)
+12. text__antigua                                                  0.009679 ( 0.97%)
+13. cat__category_id_MLA15328                                      0.008165 ( 0.82%)
+14. text__digital                                                  0.007792 ( 0.78%)
+15. num__num_attributes                                            0.007538 ( 0.75%)
+16. text__impecable                                                0.007210 ( 0.72%)
+17. num__base_price                                                0.007171 ( 0.72%)
+18. text__kit                                                      0.006557 ( 0.66%)
+19. cat__category_id_MLA85960                                      0.006385 ( 0.64%)
+20. cat__category_id_MLA2038                                       0.006288 ( 0.63%)
+21. text__antiguo                                                  0.006238 ( 0.62%)
+22. text__anal                                                     0.006160 ( 0.62%)
+23. cat__listing_type_id_bronze                                    0.005837 ( 0.58%)
+24. cat__category_id_MLA41287                                      0.005749 ( 0.57%)
+25. text__lp                                                       0.005738 ( 0.57%)
+26. cat__category_id_MLA1383                                       0.005177 ( 0.52%)
+27. cat__category_id_MLA3936                                       0.005072 ( 0.51%)
+28. num__price                                                     0.005046 ( 0.50%)
+29. num__has_original                                              0.005029 ( 0.50%)
+30. text__revista                                                  0.004989 ( 0.50%)

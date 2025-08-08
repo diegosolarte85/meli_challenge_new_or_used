@@ -160,37 +160,31 @@ weighted avg       0.91      0.91      0.91     10000
 
 ## Feature Importance Analysis
 
-The top 20 most important features (based on XGBoost feature importance):
+Real results from the champion XGBoost model:
 
-| Rank | Feature | Importance | Description |
-|------|---------|------------|-------------|
-| 1 | **text_vinilo** | 0.0136 | Text feature indicating "vinilo" (vinyl) |
-| 2 | **text_antigua** | 0.0077 | Text feature indicating "antigua" (antique) |
-| 3 | **text_lp** | 0.0069 | Text feature indicating "lp" (long play) |
-| 4 | **text_mint** | 0.0067 | Text feature indicating "mint" (perfect condition) |
-| 5 | **text_impecable** | 0.0066 | Text feature indicating "impecable" (flawless) |
-| 6 | **text_consolador** | 0.0053 | Text feature indicating "consolador" (console) |
-| 7 | **text_kit** | 0.0053 | Text feature indicating "kit" |
-| 8 | **text_estado** | 0.0050 | Text feature indicating "estado" (condition) |
-| 9 | **text_honda** | 0.0046 | Text feature indicating "honda" (brand) |
-| 10 | **text_revista** | 0.0046 | Text feature indicating "revista" (magazine) |
-| 11 | **text_faro** | 0.0045 | Text feature indicating "faro" (headlight) |
-| 12 | **text_libro digital** | 0.0043 | Text feature indicating "digital book" |
-| 13 | **text_trasero** | 0.0042 | Text feature indicating "trasero" (rear) |
-| 14 | **text_marca** | 0.0040 | Text feature indicating "marca" (brand) |
-| 15 | **text_delantero** | 0.0036 | Text feature indicating "delantero" (front) |
-| 16 | **text_aros** | 0.0036 | Text feature indicating "aros" (rings/wheels) |
-| 17 | **text_antiguo** | 0.0036 | Text feature indicating "antiguo" (old) |
-| 18 | **text_renault** | 0.0035 | Text feature indicating "renault" (brand) |
-| 19 | **text_vhs** | 0.0034 | Text feature indicating "vhs" (video format) |
-| 20 | **text_filtro** | 0.0034 | Text feature indicating "filtro" (filter) |
+<img src="model_results/champion_model_feature_importance.png" alt="Champion Model Feature Importance" width="900"/>
 
-### Key Insights:
-- **Text features dominate**: The most important features are text-based, indicating that product titles contain strong signals about item condition
-- **Condition indicators**: Words like "mint", "impecable", "antigua", "antiguo" are highly predictive of item condition
-- **Product-specific terms**: Terms like "vinilo", "lp", "vhs" suggest vintage/collectible items are more likely to be used
-- **Brand names**: Specific brands like "honda", "renault" appear as important features
-- **Automotive parts**: Terms like "faro", "trasero", "delantero", "aros", "filtro" suggest automotive listings have strong condition indicators
+### Top Features (by importance)
+| Rank | Feature | Importance | Share |
+|------|---------|------------|-------|
+| 1 | num__initial_quantity | 0.105853 | 10.59% |
+| 2 | cat__listing_type_id_free | 0.060420 | 6.04% |
+| 3 | cat__buying_mode_classified | 0.040546 | 4.05% |
+| 4 | num__available_quantity | 0.016829 | 1.68% |
+| 5 | text__vinilo | 0.015995 | 1.60% |
+| 6 | num__automatic_relist | 0.015235 | 1.52% |
+| 7 | num__sold_quantity | 0.014777 | 1.48% |
+| 8 | num__free_shipping | 0.011505 | 1.15% |
+| 9 | num__has_nuevo | 0.011299 | 1.13% |
+| 10 | num__has_antiguo | 0.011061 | 1.11% |
+| 11 | num__has_dragged_bids | 0.010422 | 1.04% |
+| 12 | text__antigua | 0.009679 | 0.97% |
+| 13 | cat__category_id_MLA15328 | 0.008165 | 0.82% |
+| 14 | text__digital | 0.007792 | 0.78% |
+| 15 | num__num_attributes | 0.007538 | 0.75% |
+
+- Full ranked list (CSV): `model_results/champion_model_feature_importance.csv`
+- Detailed summary: `model_results/champion_model_feature_importance_report.txt`
 
 ### Final Results Summary
 
@@ -372,6 +366,9 @@ python advanced_modeling.py --tuning-level full
 | **BiLSTM** | **81.85%** | **81.87%** | **81.91%** | **81.85%** |
 | CNN+LSTM | 80.56% | 80.57% | 81.49% | 80.56% |
 | LSTM | 54.06% | 37.94% | 29.22% | 54.06% |
+
+#### Deep Learning Training History
+<img src="model_results/deep_learning_training_history.png" alt="Deep Learning Training History" width="600"/>
 
 **Average Performance:**
 - **Average Accuracy**: 72.16%
